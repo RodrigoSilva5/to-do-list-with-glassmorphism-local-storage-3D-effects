@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        background: url(./assets/lucas-benjamin-wQLAGv4_OYs-unsplash.jpg) no-repeat;
+        background-size: cover;
+      }
+      #container{
+        margin-top: 150px;
+        width: 500px;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 3em;
+        backdrop-filter: blur(5px);
+        border: solid 2px transparent;
+        background-clip: padding-box;
+        box-shadow:10px 10px 10px rgba(46, 54, 68, 0.03);
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        transform: translateZ(20px);
+      }
+      ul{
+        list-style: none;
+        width: 100%;
+      }
+      ul > li {
+        border: solid 5px transparent;
+        background-clip: padding-box;
+        box-shadow:10px 10px 10px rgba(46, 54, 68, 0.2);
+        width: 90%;
+        margin: 5px;
+      }
+      .list_item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .list_item input {
+        margin: 20px;
+      }
+      input[type=checkbox]:checked + p{
+        text-decoration: line-through;
+      }
+      input[type=checkbox]:not(:checked){
+        text-decoration: none;
+      }
+      #taskinput{
+        margin: 10px 0 60px 0;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(30px);
+        border-radius: 1em;
+        height: 20px;
+      }
+
+    </style>
+</head>
+<body>
+<div id="container">
+  <h1>To do list</h1>
+  <ul id="tasklist" > 
+    <!-- as tarefas entram aqui -->
+  </ul>
+  <label for="taskinput">
+    <input type="text" name="tasks" id="taskinput">
+  </label>
+</div>
+<script type="text/javascript" src="vanilla-tilt.js"></script>
+<script src="ambiente.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelectorAll("#container"), {
+		max: 8,
+		speed:100,
+    reset: false
+	});
+	
+</script>
+</body>
+</html>
